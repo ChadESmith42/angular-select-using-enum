@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { State } from './state.enum';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 
 
@@ -10,7 +10,6 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent {
-  name = 'you!';
-  object: { [ key: string ]: string } = State;
-  stateSelect = new FormControl('', Validators.required);
+  public object = State;
+  stateSelect = new FormControl('');
 }

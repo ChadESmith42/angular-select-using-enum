@@ -29,7 +29,7 @@
     First, I created an object to hold the state enum values and assign the enum to that object:
   </p>
   <code class="code">
-    object: &#123; [ key: string ]: string &#125; = State;
+    public object = State;
   </code>
   <p>
     Then, I loop through each value in the enum and add the <code>keyvalue</code> pipe. Since each value of the enum is now broken into an object with a key and value property, I can assign each of those values to the control.
