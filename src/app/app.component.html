@@ -1,8 +1,7 @@
 <h1>Using Angular's KeyValue Pipe</h1>
 
-<div class="title">
+<div>
   <h2>Pick a State:</h2>
-  <p></p>
 </div>
 <div class="form">
   <form>
@@ -39,5 +38,11 @@
     <span class="top">&#60;select [formControl]="stateSelect"&#62;</span>
           <span class="mid">&#60;option *ngFor="let state of object | keyvalue" [value]="state.key"&#62;&#123;&#123;state.value&#125;&#125;&#60;/option&#62;</span><br>
     <span class="top">&#60;/select&#62;</span><br>
+  </code>
+  <p>
+    I now have the selected value available through the form control. I can also use that value to display the enum value elsewhere.
+  </p>
+  <code class="code">
+      object&#91;stateSelect.value&#93;
   </code>
 </div>
