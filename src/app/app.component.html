@@ -1,17 +1,43 @@
-<hello name="{{ name }}"></hello>
+<h1>Using Angular's KeyValue Pipe</h1>
 
-<div>
-  <h2>Enum Values</h2>
+<div class="title">
+  <h2>Pick a State:</h2>
   <p></p>
 </div>
-<div>
+<div class="form">
   <form>
       <select [formControl]="stateSelect">
-          <option *ngFor="let state of object | keyvalue" [value]="state.key">{{state.value}}
+          <option *ngFor="let state of object | keyvalue" [value]="state.key">{{state.value}}</option>
         </select>
-        <div *ngIf="stateSelect.value">
-            <p>The value is {{stateSelect.value}}</p>
-            <p>The displayed value is {{object[stateSelect.value]}}</p>
+        <div class="response" *ngIf="stateSelect.value">
+            <p>The value is <span class="data">{{stateSelect.value}}</span>.</p>
+            <p>The displayed value is <span class="data">{{object[stateSelect.value]}}.</span></p>
         </div>
   </form>
+</div>
+
+<div>
+  <p>
+    We have an enum of US State names formatted as
+  </p>
+  <code class="code">
+      IN = "Indiana"
+  </code>
+  <p>
+    Using the <code>keyvalue</code> pipe that is build into Angular, we can use the enum in a <code>select</code> HTML element.
+  </p>
+  <p>
+    First, I created an object to hold the state enum values and assign the enum to that object:
+  </p>
+  <code class="code">
+    object: &#123; [ key: string ]: string &#125; = State;
+  </code>
+  <p>
+    Then, I loop through each value in the enum and add the <code>keyvalue</code> pipe. Since each value of the enum is now broken into an object with a key and value property, I can assign each of those values to the control.
+  </p>
+  <code>
+    <span class="top">&#60;select [formControl]="stateSelect"&#62;</span>
+          <span class="mid">&#60;option *ngFor="let state of object | keyvalue" [value]="state.key"&#62;&#123;&#123;state.value&#125;&#125;&#60;/option&#62;</span><br>
+    <span class="top">&#60;/select&#62;</span><br>
+  </code>
 </div>

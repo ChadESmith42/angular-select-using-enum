@@ -1,3 +1,59 @@
-p {
-  font-family: Lato;
+.title {
+  padding: 8px 16px 16px 16px;
+}
+
+.form {
+  margin: 16px;
+}
+
+select {
+  font-size: 24px;
+  height: 48px;
+  width: 50%;
+  border: 2px solid #e6e6e6;
+  border-bottom: 2px solid black;
+  border-radius: 8px 8px 0 0;
+}
+
+option {
+  font-size: 24px;
+}
+
+select:focus,
+select:hover {
+  border: 2px solid black;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.response {
+  padding: 24px;
+  margin: 24px 16px 0 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.data {
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+code {
+  font-family: monospace;
+  font-weight: 900;
+  color: blue;
+}
+
+.code {
+  margin-left: 16px;
+}
+
+.top {
+  display: inline-block;
+  margin-left: 16px;
+}
+
+.mid {
+  display: inline-block;
+  margin-left: 24px;
 }
