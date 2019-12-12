@@ -1,0 +1,17 @@
+<hello name="{{ name }}"></hello>
+
+<div>
+  <h2>Enum Values</h2>
+  <p></p>
+</div>
+<div>
+  <form>
+      <select [formControl]="stateSelect">
+          <option *ngFor="let state of object | keyvalue" [value]="state.key">{{state.value}}
+        </select>
+        <div *ngIf="stateSelect.value">
+            <p>The value is {{stateSelect.value}}</p>
+            <p>The displayed value is {{object[stateSelect.value]}}</p>
+        </div>
+  </form>
+</div>
